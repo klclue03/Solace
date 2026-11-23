@@ -1,0 +1,118 @@
+{
+ "_note": "Hand-written test people. 'expected' is the overall score range (0-100) we think is reasonable, set by judgment before running the model. 'subscores' optionally adds expected ranges for individual subscores.",
+ "profiles": [
+  {
+   "name": "average_person",
+   "description": "Median answer to every question in the dataset",
+   "answers": {"FLOW": 3, "TIME_FOR_PASSION": 3, "ACHIEVEMENT": 3, "TODO_COMPLETED": 6, "LIVE_VISION": 3,
+               "DAILY_STRESS": 3, "DAILY_SHOUTING": 2, "LOST_VACATION": 0, "SUPPORTING_OTHERS": 5, "DONATION": 3, "PERSONAL_AWARDS": 5,
+               "CORE_CIRCLE": 5, "FRUITS_VEGGIES": 3, "DAILY_STEPS": 5, "PLACES_VISITED": 5, "WEEKLY_MEDITATION": 7,
+               "SOCIAL_NETWORK": 6, "SLEEP_HOURS": 7},
+   "expected": [35, 65]
+  },
+  {
+   "name": "thriving",
+   "description": "Best possible answer everywhere, 8 hours sleep",
+   "answers": {"FLOW": 10, "TIME_FOR_PASSION": 10, "ACHIEVEMENT": 10, "TODO_COMPLETED": 10, "LIVE_VISION": 10,
+               "DAILY_STRESS": 0, "DAILY_SHOUTING": 0, "LOST_VACATION": 0, "SUPPORTING_OTHERS": 10, "DONATION": 5, "PERSONAL_AWARDS": 10,
+               "CORE_CIRCLE": 10, "FRUITS_VEGGIES": 5, "DAILY_STEPS": 10, "PLACES_VISITED": 10, "WEEKLY_MEDITATION": 10,
+               "SOCIAL_NETWORK": 10, "SLEEP_HOURS": 8},
+   "expected": [90, 100]
+  },
+  {
+   "name": "struggling",
+   "description": "Worst possible answer everywhere, 1 hour sleep",
+   "answers": {"FLOW": 0, "TIME_FOR_PASSION": 0, "ACHIEVEMENT": 0, "TODO_COMPLETED": 0, "LIVE_VISION": 0,
+               "DAILY_STRESS": 5, "DAILY_SHOUTING": 10, "LOST_VACATION": 10, "SUPPORTING_OTHERS": 0, "DONATION": 0, "PERSONAL_AWARDS": 0,
+               "CORE_CIRCLE": 0, "FRUITS_VEGGIES": 0, "DAILY_STEPS": 1, "PLACES_VISITED": 0, "WEEKLY_MEDITATION": 0,
+               "SOCIAL_NETWORK": 0, "SLEEP_HOURS": 1},
+   "expected": [0, 10]
+  },
+  {
+   "name": "generally_good",
+   "description": "Mostly 7/10 answers, low stress, 8 hours sleep",
+   "answers": {"FLOW": 6, "TIME_FOR_PASSION": 6, "ACHIEVEMENT": 6, "TODO_COMPLETED": 8, "LIVE_VISION": 6,
+               "DAILY_STRESS": 1, "DAILY_SHOUTING": 1, "LOST_VACATION": 0, "SUPPORTING_OTHERS": 7, "DONATION": 4, "PERSONAL_AWARDS": 7,
+               "CORE_CIRCLE": 7, "FRUITS_VEGGIES": 4, "DAILY_STEPS": 7, "PLACES_VISITED": 7, "WEEKLY_MEDITATION": 8,
+               "SOCIAL_NETWORK": 8, "SLEEP_HOURS": 8},
+   "expected": [75, 95]
+  },
+  {
+   "name": "burned_out_achiever",
+   "description": "High achievement and productivity, but very stressed, shouts often, sleeps 5h, no reflection time",
+   "answers": {"FLOW": 7, "TIME_FOR_PASSION": 2, "ACHIEVEMENT": 9, "TODO_COMPLETED": 9, "LIVE_VISION": 8,
+               "DAILY_STRESS": 5, "DAILY_SHOUTING": 7, "LOST_VACATION": 8, "SUPPORTING_OTHERS": 4, "DONATION": 2, "PERSONAL_AWARDS": 8,
+               "CORE_CIRCLE": 3, "FRUITS_VEGGIES": 1, "DAILY_STEPS": 3, "PLACES_VISITED": 3, "WEEKLY_MEDITATION": 1,
+               "SOCIAL_NETWORK": 5, "SLEEP_HOURS": 5},
+   "expected": [30, 65],
+   "subscores": {"engagement": [60, 100], "calm": [0, 25], "rest": [0, 30]}
+  },
+  {
+   "name": "social_but_inactive",
+   "description": "Lots of close friends and helping others, but few steps, poor diet, rarely goes anywhere new",
+   "answers": {"FLOW": 3, "TIME_FOR_PASSION": 3, "ACHIEVEMENT": 3, "TODO_COMPLETED": 5, "LIVE_VISION": 3,
+               "DAILY_STRESS": 2, "DAILY_SHOUTING": 2, "LOST_VACATION": 1, "SUPPORTING_OTHERS": 9, "DONATION": 4, "PERSONAL_AWARDS": 5,
+               "CORE_CIRCLE": 10, "FRUITS_VEGGIES": 1, "DAILY_STEPS": 2, "PLACES_VISITED": 1, "WEEKLY_MEDITATION": 4,
+               "SOCIAL_NETWORK": 10, "SLEEP_HOURS": 7},
+   "expected": [35, 70],
+   "subscores": {"giving": [55, 100], "social": [70, 100], "active": [0, 30]}
+  },
+  {
+   "name": "healthy_loner",
+   "description": "Very active, eats well, sleeps 8h, meditates, but few people around",
+   "answers": {"FLOW": 4, "TIME_FOR_PASSION": 4, "ACHIEVEMENT": 3, "TODO_COMPLETED": 6, "LIVE_VISION": 4,
+               "DAILY_STRESS": 2, "DAILY_SHOUTING": 1, "LOST_VACATION": 0, "SUPPORTING_OTHERS": 1, "DONATION": 1, "PERSONAL_AWARDS": 3,
+               "CORE_CIRCLE": 1, "FRUITS_VEGGIES": 5, "DAILY_STEPS": 10, "PLACES_VISITED": 8, "WEEKLY_MEDITATION": 10,
+               "SOCIAL_NETWORK": 1, "SLEEP_HOURS": 8},
+   "expected": [35, 70],
+   "subscores": {"active": [70, 100], "social": [0, 30], "giving": [0, 35]}
+  },
+  {
+   "name": "stressed_and_isolated",
+   "description": "Low on almost everything, high stress, 5h sleep",
+   "answers": {"FLOW": 1, "TIME_FOR_PASSION": 1, "ACHIEVEMENT": 1, "TODO_COMPLETED": 3, "LIVE_VISION": 1,
+               "DAILY_STRESS": 5, "DAILY_SHOUTING": 5, "LOST_VACATION": 5, "SUPPORTING_OTHERS": 1, "DONATION": 0, "PERSONAL_AWARDS": 1,
+               "CORE_CIRCLE": 2, "FRUITS_VEGGIES": 1, "DAILY_STEPS": 2, "PLACES_VISITED": 1, "WEEKLY_MEDITATION": 2,
+               "SOCIAL_NETWORK": 2, "SLEEP_HOURS": 5},
+   "expected": [0, 15]
+  },
+  {
+   "name": "average_oversleeper",
+   "description": "Same as average_person but sleeps 10 hours",
+   "answers": {"FLOW": 3, "TIME_FOR_PASSION": 3, "ACHIEVEMENT": 3, "TODO_COMPLETED": 6, "LIVE_VISION": 3,
+               "DAILY_STRESS": 3, "DAILY_SHOUTING": 2, "LOST_VACATION": 0, "SUPPORTING_OTHERS": 5, "DONATION": 3, "PERSONAL_AWARDS": 5,
+               "CORE_CIRCLE": 5, "FRUITS_VEGGIES": 3, "DAILY_STEPS": 5, "PLACES_VISITED": 5, "WEEKLY_MEDITATION": 7,
+               "SOCIAL_NETWORK": 6, "SLEEP_HOURS": 10},
+   "expected": [25, 60],
+   "subscores": {"rest": [0, 30]}
+  }
+ ],
+
+ "_direction_note": "Change one or more answers of a base profile; the named score should move in the given direction.",
+ "direction_checks": [
+  {"base": "average_person", "change": {"DAILY_STRESS": 0},            "score": "calm",       "expect": "up"},
+  {"base": "average_person", "change": {"DAILY_SHOUTING": 8},          "score": "calm",       "expect": "down"},
+  {"base": "average_person", "change": {"LOST_VACATION": 8},           "score": "calm",       "expect": "down"},
+  {"base": "average_person", "change": {"DAILY_STEPS": 9},             "score": "active",     "expect": "up"},
+  {"base": "average_person", "change": {"FLOW": 8},                    "score": "engagement", "expect": "up"},
+  {"base": "average_person", "change": {"CORE_CIRCLE": 9},             "score": "giving",     "expect": "up"},
+  {"base": "average_person", "change": {"SOCIAL_NETWORK": 1},          "score": "social",     "expect": "down"},
+  {"base": "average_person", "change": {"SLEEP_HOURS": 8},             "score": "rest",       "expect": "up"},
+  {"base": "average_person", "change": {"SLEEP_HOURS": 4},             "score": "rest",       "expect": "down"},
+  {"base": "average_person", "change": {"SLEEP_HOURS": 10},            "score": "rest",       "expect": "down"},
+  {"base": "average_person", "change": {"DAILY_STRESS": 5},            "score": "overall",    "expect": "down"},
+  {"base": "average_person", "change": {"TIME_FOR_PASSION": 8},        "score": "overall",    "expect": "up"},
+
+  {"base": "healthy_loner",       "change": {"WEEKLY_MEDITATION": 5},  "score": "active",     "expect": "down"},
+  {"base": "healthy_loner",       "change": {"FRUITS_VEGGIES": 3},     "score": "active",     "expect": "down"},
+  {"base": "healthy_loner",       "change": {"CORE_CIRCLE": 8},        "score": "giving",     "expect": "up"},
+  {"base": "social_but_inactive", "change": {"WEEKLY_MEDITATION": 9},  "score": "active",     "expect": "up"},
+  {"base": "social_but_inactive", "change": {"CORE_CIRCLE": 4},        "score": "giving",     "expect": "down"},
+  {"base": "burned_out_achiever", "change": {"DAILY_STRESS": 2},       "score": "calm",       "expect": "up"},
+  {"base": "burned_out_achiever", "change": {"SLEEP_HOURS": 8},        "score": "overall",    "expect": "up"},
+  {"base": "generally_good",      "change": {"WEEKLY_MEDITATION": 2},  "score": "active",     "expect": "down"},
+  {"base": "generally_good",      "change": {"CORE_CIRCLE": 10},       "score": "giving",     "expect": "up"},
+  {"base": "stressed_and_isolated","change": {"FLOW": 6},              "score": "engagement", "expect": "up"},
+  {"base": "stressed_and_isolated","change": {"DAILY_STEPS": 8},       "score": "active",     "expect": "up"}
+ ]
+}
