@@ -10,6 +10,8 @@ data/responses.db
 
 !test_cases/profiles.json
 test_cases/real_cases.json
+!test_cases/journal_cases.json
+!test_cases/nlp_unseen.json
 
 __pycache__/
 

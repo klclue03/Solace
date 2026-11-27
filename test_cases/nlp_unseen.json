@@ -1,0 +1,61 @@
+{
+ "_note": "Sentences written after the robustness fixes and never used to tune the rules. Once rules are changed because of a failure here, move that sentence into run_nlp_robustness.py and write a new unseen one.",
+ "values": [
+  ["SLEEP_HOURS", "Most nights I get somewhere around 6 hours of shut-eye.", 6],
+  ["SLEEP_HOURS", "I've been sleeping roughly eight hours.", 8],
+  ["SLEEP_HOURS", "Sleep is rubbish, 4 hours if I'm lucky.", 4],
+  ["DAILY_STEPS", "My step count is usually around 10,000 a day.", 10],
+  ["DAILY_STEPS", "I walk about 4 thousand steps.", 4],
+  ["SOCIAL_NETWORK", "On a normal day I'd chat with maybe a dozen people.", 10],
+  ["SOCIAL_NETWORK", "I only really speak to 2 or 3 people each day.", 2.5],
+  ["CORE_CIRCLE", "I've got a tight circle of five friends I can rely on.", 5],
+  ["CORE_CIRCLE", "I'm close with three people.", 3],
+  ["FRUITS_VEGGIES", "I manage about two pieces of fruit a day.", 2],
+  ["FLOW", "At work I'm in the zone for 3 hours or so.", 3],
+  ["TIME_FOR_PASSION", "I play piano for around an hour each day, it's what I love most.", 1],
+  ["DAILY_SHOUTING", "I end up yelling at the kids twice a week.", 2],
+  ["DAILY_SHOUTING", "I argue with my boyfriend about 4 times a month.", 0.9],
+  ["WEEKLY_MEDITATION", "I do a 10 minute meditation five times a week.", 5],
+  ["PLACES_VISITED", "I've been to 4 new countries this year.", 4],
+  ["LOST_VACATION", "I had 3 days of holiday I never used.", 3],
+  ["SUPPORTING_OTHERS", "I coach 12 kids at the weekend.", 10],
+  ["DONATION", "I donate money about once a month.", 3],
+  ["LIVE_VISION", "I know exactly where I want to be in 10 years.", 10],
+  ["DAILY_STRESS", "I'm under a lot of pressure.", 4],
+  ["DAILY_STRESS", "I feel quite tense most days.", 3],
+  ["DAILY_STRESS", "I'm not worried about much.", 1],
+  ["TODO_COMPLETED", "I tick off about 60 percent of my tasks.", 6],
+  ["TODO_COMPLETED", "I rarely finish what's on my list.", 2]
+ ],
+ "negations": [
+  ["WEEKLY_MEDITATION", "I never get time to meditate.", 0],
+  ["PLACES_VISITED", "I haven't travelled anywhere this year.", 0],
+  ["CORE_CIRCLE", "There's nobody I'm really close to.", 0],
+  ["DONATION", "I don't volunteer or donate.", 0],
+  ["DAILY_SHOUTING", "I never lose my temper.", 0],
+  ["TIME_FOR_PASSION", "I don't really have any passions.", 0]
+ ],
+ "interference": [
+  ["I meditate 3 times a week and visit my 2 best friends.", {"WEEKLY_MEDITATION": 3, "CORE_CIRCLE": 2}, []],
+  ["I sleep about 6 hours because I walk the dog for 2 hours every morning.", {"SLEEP_HOURS": 6}, ["FLOW", "TIME_FOR_PASSION"]],
+  ["I help 3 neighbours and talk to about 10 people a day.", {"SUPPORTING_OTHERS": 3, "SOCIAL_NETWORK": 10}, []],
+  ["I have 3 kids, so I only get 5 hours of sleep.", {"SLEEP_HOURS": 5}, ["CORE_CIRCLE", "SUPPORTING_OTHERS"]],
+  ["I eat 2 portions of veg and go for a 30 minute walk every day.", {"FRUITS_VEGGIES": 2}, ["DAILY_STEPS"]]
+ ],
+ "safety_positive": [
+  "I've been thinking about ending my life.",
+  "Sometimes I wish I wasn't alive.",
+  "I just want everything to stop, permanently.",
+  "I've started hurting myself when things get bad.",
+  "I don't think I can keep going anymore.",
+  "Life isn't worth living."
+ ],
+ "safety_negative": [
+  "I'm dead tired after work.",
+  "That exam nearly killed me.",
+  "I could murder a pizza right now.",
+  "My plants keep dying.",
+  "I'd die for a holiday.",
+  "I want to end this project soon."
+ ]
+}

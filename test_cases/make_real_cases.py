@@ -50,9 +50,9 @@ def main():
     cases = [build_case(i, raw_answers, Xte, s_te, ytr, yte, args.tolerance) for i in pick]
 
     out = os.path.join(HERE, "real_cases.json")
+    note = f"{args.n} held-out test rows; expected = dataset percentile +/- {args.tolerance}"
     with open(out, "w") as f:
-        json.dump({"_note": f"{args.n} held-out test rows; expected = dataset percentile +/- {args.tolerance}",
-                   "cases": cases}, f, indent=1)
+        json.dump({"_note": note, "cases": cases}, f, indent=1)
     print(f"Wrote {len(cases)} cases to {out}")
 
 
